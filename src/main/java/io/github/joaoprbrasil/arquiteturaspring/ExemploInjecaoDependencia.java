@@ -28,6 +28,7 @@ public class ExemploInjecaoDependencia {
 
         TodoService todoService = new TodoService(repository, todoValidator, sender);
 
-
+        BeanGerenciado beanGerenciado = new BeanGerenciado(null);
+        beanGerenciado.setValidator(todoValidator);
     }
 }

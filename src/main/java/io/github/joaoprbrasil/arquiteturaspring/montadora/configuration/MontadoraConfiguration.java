@@ -5,12 +5,14 @@ import io.github.joaoprbrasil.arquiteturaspring.montadora.TipoMotor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class MontadoraConfiguration {
 
     @Primary
     @Bean(name = "motorAspirado")
+    @Scope("singleton")
     public Motor motorAspirado(){
         var motor = new Motor();
         motor.setCavalos(120);
@@ -22,6 +24,7 @@ public class MontadoraConfiguration {
     }
 
     @Bean(name = "motorEletrico")
+    @Scope("singleton")
     public Motor motorEletrico(){
         var motor = new Motor();
         motor.setCavalos(110);
@@ -33,6 +36,7 @@ public class MontadoraConfiguration {
     }
 
     @Bean(name = "motorTurbo")
+    @Scope("singleton")
     public Motor motorTurbo(){
         var motor = new Motor();
         motor.setCavalos(180);
