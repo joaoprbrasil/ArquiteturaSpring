@@ -4,12 +4,13 @@ import io.github.joaoprbrasil.arquiteturaspring.todos.TodoEntity;
 import io.github.joaoprbrasil.arquiteturaspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+@Lazy // vai ser instanciado apenas quando o codigo for ativado
 @Component
-
 @Scope("singleton") // instanciado apenas uma vez para toda a aplicação
 //@Scope(BeanDefinition.SCOPE_SINGLETON)
 
